@@ -12,8 +12,8 @@ from selenium.webdriver.chrome.service import Service
 def driver_setup(request):
     service = Service("/usr/bin/chromedriver")
     driver = webdriver.Chrome(service=service)
-    driver.implicitly_wait(5)
-    driver.set_page_load_timeout(5)
+    driver.implicitly_wait(4)
+    driver.set_page_load_timeout(4)
     driver.get("http://todo.ly/")
 
     def teardown():
