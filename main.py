@@ -12,6 +12,15 @@ from selenium.webdriver.chrome.service import Service
 def driver_setup(request):
     service = Service("/usr/bin/geckodriver")
     driver = webdriver.Firefox(service=service)
+
+    firefox_binary = '/opt/firefox/firefox'
+
+    firefox_options = webdriver.FirefoxOptions()
+    firefox_options.binary_location = firefox_binary
+
+    driver = webdriver.Firefox(service=service, options=firefox_options)
+
+
     driver.implicitly_wait(4)
     driver.set_page_load_timeout(4)
     driver.get("http://todo.ly/")
