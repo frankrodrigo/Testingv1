@@ -12,7 +12,7 @@ from selenium.webdriver.chrome.service import Service
 def driver_setup(request):
     service = Service("/usr/bin/geckodriver")
 
-    firefox_binary = '/opt/firefox/firefox-bin'
+    firefox_binary = '/opt/firefox/firefox'
 
     firefox_options = webdriver.FirefoxOptions()
     firefox_options.binary_location = firefox_binary
