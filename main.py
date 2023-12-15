@@ -10,8 +10,8 @@ from selenium.webdriver.chrome.service import Service
 
 @pytest.fixture(scope="module")
 def driver_setup(request):
-    service = Service("Resources/chromedriver.exe")
-    driver = webdriver.Chrome(service=service)
+    service = Service("/usr/bin/geckodriver")
+    driver = webdriver.Firefox(service=service)
     driver.implicitly_wait(5)
     driver.set_page_load_timeout(5)
     driver.get("http://todo.ly/")
