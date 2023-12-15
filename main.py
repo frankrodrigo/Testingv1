@@ -11,7 +11,6 @@ from selenium.webdriver.chrome.service import Service
 @pytest.fixture(scope="module")
 def driver_setup(request):
     service = Service("/usr/bin/geckodriver")
-    driver = webdriver.Firefox(service=service)
 
     firefox_binary = '/opt/firefox/firefox-bin'
 
