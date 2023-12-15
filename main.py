@@ -36,8 +36,8 @@ def test_verify_CRUD_project(driver_setup):
 
     # login
     driver.find_element(By.XPATH, "//img[contains(@src,'pagelogin')]").click()
-    driver.find_element(By.ID, "ctl00_MainContent_LoginControl1_TextBoxEmail").send_keys("bootcamp@mojix44.com")
-    driver.find_element(By.ID, "ctl00_MainContent_LoginControl1_TextBoxPassword").send_keys("12345")
+    driver.find_element(By.ID, "ctl00_MainContent_LoginControl1_TextBoxEmail").send_keys("frank@frank.com")
+    driver.find_element(By.ID, "ctl00_MainContent_LoginControl1_TextBoxPassword").send_keys("123456")
     driver.find_element(By.ID, "ctl00_MainContent_LoginControl1_ButtonLogin").click()
 
     # Explicit Wait
@@ -56,11 +56,11 @@ def test_verify_CRUD_project(driver_setup):
     assert actual_result >= 1, "ERROR: The project was not created"
 
     # create task
-    driver.find_element(By.ID, "NewItemContentInput").send_keys("Eynar")
+    driver.find_element(By.ID, "NewItemContentInput").send_keys("UpdatedProject")
     driver.find_element(By.ID, "NewItemAddButton").click()
 
     # update task
-    task_element = driver.find_element(By.XPATH, "//div[@class='ItemContentDiv' and text()='Eynar']")
+    task_element = driver.find_element(By.XPATH, "//div[@class='ItemContentDiv' and text()='UpdatedProject']")
     task_element.click()
     driver.find_element(By.ID, "ItemEditTextbox").clear()
     driver.find_element(By.ID, "ItemEditTextbox").send_keys("Update\n")
